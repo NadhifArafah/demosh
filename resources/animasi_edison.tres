@@ -1,0 +1,96 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cypx8xp2ouf2i"]
+
+[ext_resource type="Texture2D" uid="uid://dyb8q0atu6cf7" path="res://assets/ThomasEdison.png" id="1_prokm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dycqo"]
+atlas = ExtResource("1_prokm")
+region = Rect2(1152, 204, 128, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlchg"]
+atlas = ExtResource("1_prokm")
+region = Rect2(0, 0, 128, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q84oq"]
+atlas = ExtResource("1_prokm")
+region = Rect2(128, 0, 128, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_siw84"]
+atlas = ExtResource("1_prokm")
+region = Rect2(256, 0, 128, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utuie"]
+atlas = ExtResource("1_prokm")
+region = Rect2(384, 0, 128, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mygr4"]
+atlas = ExtResource("1_prokm")
+region = Rect2(512, 0, 128, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nh3ne"]
+atlas = ExtResource("1_prokm")
+region = Rect2(640, 0, 128, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdtv2"]
+atlas = ExtResource("1_prokm")
+region = Rect2(768, 0, 128, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehfx5"]
+atlas = ExtResource("1_prokm")
+region = Rect2(896, 0, 128, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prokm"]
+atlas = ExtResource("1_prokm")
+region = Rect2(1024, 0, 128, 204)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dycqo")
+}],
+"loop": 1,
+"name": &"aw",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlchg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q84oq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_siw84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utuie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mygr4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nh3ne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdtv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehfx5")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prokm")
+}],
+"loop": 1,
+"name": &"punch",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]

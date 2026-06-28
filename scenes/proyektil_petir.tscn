@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://b6i3bpjshyhk8"]
+
+[ext_resource type="Script" uid="uid://coc7ary5t2tcg" path="res://scripts/proyektil_petir.gd" id="1_674yf"]
+[ext_resource type="Texture2D" uid="uid://ddq0bh8pgwwfk" path="res://assets/NicolaTesla (2).png" id="2_f1a8x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fiu1"]
+atlas = ExtResource("2_f1a8x")
+region = Rect2(1056, 594, 176, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dumrd"]
+atlas = ExtResource("2_f1a8x")
+region = Rect2(1232, 594, 176, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1a8x"]
+atlas = ExtResource("2_f1a8x")
+region = Rect2(1408, 396, 176, 198)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ytweh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fiu1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dumrd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1a8x")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifvk4"]
+size = Vector2(73, 63)
+
+[node name="Proyektil" type="Area2D" unique_id=1479654970]
+z_index = 20
+position = Vector2(176, 88)
+collision_mask = 7
+script = ExtResource("1_674yf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1264102004]
+position = Vector2(10.420005, -10.500002)
+scale = Vector2(0.5362354, 0.4656863)
+sprite_frames = SubResource("SpriteFrames_ytweh")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1009821121]
+position = Vector2(9.5, -24.5)
+shape = SubResource("RectangleShape2D_ifvk4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
