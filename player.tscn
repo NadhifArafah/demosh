@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://ckudr8chj1kgo"]
+
+[ext_resource type="Script" uid="uid://dgemna2cprj7k" path="res://player.gd" id="1_4flbx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sh265"]
+radius = 44.0
+height = 146.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4flbx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4flbx"]
+size = Vector2(166.5, 192)
+
+[node name="Player" type="CharacterBody2D" unique_id=188033048]
+script = ExtResource("1_4flbx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=997686009]
+position = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_sh265")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=875988980]
+sprite_frames = SubResource("SpriteFrames_4flbx")
+
+[node name="PunchBox" type="Area2D" parent="." unique_id=1918007988]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PunchBox" unique_id=1934596570]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_4flbx")
+
+[node name="CooldownTembak" type="Timer" parent="." unique_id=519472824]
+one_shot = true
+
+[node name="CooldownPukul" type="Timer" parent="." unique_id=102789675]
+one_shot = true
+
+[connection signal="body_entered" from="PunchBox" to="." method="_on_punch_box_body_entered"]
