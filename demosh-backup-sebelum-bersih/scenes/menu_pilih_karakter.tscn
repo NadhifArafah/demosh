@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bjmr2n5v5epd7"]
+
+[ext_resource type="Script" uid="uid://dg0delpkerpmc" path="res://scripts/menu_pilih_karakter.gd" id="1_lcf5l"]
+
+[node name="MenuPilihKarakter" type="Control" unique_id=573680]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lcf5l")
+
+[node name="TombolTesla" type="Button" parent="." unique_id=961020372]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 38.0
+offset_right = 454.0
+offset_bottom = 216.0
+button_mask = 3
+text = "Pilih Tesla"
+
+[node name="TombolEdison" type="Button" parent="." unique_id=1611779357]
+layout_mode = 0
+offset_left = 833.0
+offset_top = 57.0
+offset_right = 1283.0
+offset_bottom = 211.0
+button_mask = 3
+text = "Pilih Edison"
+
+[node name="TombolMulai" type="Button" parent="." unique_id=1997952978]
+layout_mode = 0
+offset_left = 446.0
+offset_top = 389.0
+offset_right = 854.0
+offset_bottom = 529.0
+text = "MULAI Bertarung!"
+
+[connection signal="gui_input" from="TombolTesla" to="." method="_on_tombol_tesla_gui_input"]
+[connection signal="pressed" from="TombolTesla" to="." method="_on_tombol_tesla_pressed"]
+[connection signal="gui_input" from="TombolEdison" to="." method="_on_tombol_edison_gui_input"]
+[connection signal="pressed" from="TombolEdison" to="." method="_on_tombol_edison_pressed"]
+[connection signal="pressed" from="TombolMulai" to="." method="_on_tombol_mulai_pressed"]

@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://c6egky17u1hae"]
+
+[ext_resource type="Texture2D" uid="uid://dx4n2t5svg035" path="res://assets/Background.png" id="1_sky"]
+[ext_resource type="Texture2D" uid="uid://cneq6t4pygpxa" path="res://assets/GandalfHardcore Background layers_layer 1.png" id="2_trees"]
+[ext_resource type="Texture2D" uid="uid://c5mr7g1t6nhmf" path="res://assets/Mossy - FloatingPlatforms.png" id="3_mossy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
+size = Vector2(1280, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plat_left"]
+size = Vector2(224, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plat_center"]
+size = Vector2(468, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plat_right"]
+size = Vector2(224, 30)
+
+[node name="MapForest" type="Node2D" unique_id=1577762152]
+
+[node name="BgSky" type="Sprite2D" parent="." unique_id=111604386]
+z_index = -10
+position = Vector2(640, 360)
+scale = Vector2(2.7083, 2.647)
+texture = ExtResource("1_sky")
+
+[node name="BgTrees" type="Sprite2D" parent="." unique_id=1931136624]
+z_index = -9
+position = Vector2(708, 421)
+scale = Vector2(1.751, 2.54)
+texture = ExtResource("2_trees")
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=89592060]
+position = Vector2(640, 683)
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1377215787]
+shape = SubResource("RectangleShape2D_ground")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground" unique_id=498208265]
+position = Vector2(0, -60)
+scale = Vector2(0.64, 0.4)
+texture = ExtResource("3_mossy")
+region_enabled = true
+region_rect = Rect2(20, 1566, 2012, 449)
+
+[node name="PlatformLeft" type="StaticBody2D" parent="." unique_id=1571478451]
+position = Vector2(250, 480)
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformLeft" unique_id=1461345915]
+position = Vector2(0, -15)
+shape = SubResource("RectangleShape2D_plat_left")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="PlatformLeft" unique_id=1899537914]
+position = Vector2(0, 10)
+scale = Vector2(0.8, 0.2)
+texture = ExtResource("3_mossy")
+region_enabled = true
+region_rect = Rect2(113, 1095, 280, 449)
+
+[node name="PlatformCenter" type="StaticBody2D" parent="." unique_id=1361199135]
+position = Vector2(640, 360)
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformCenter" unique_id=270540816]
+position = Vector2(0, -15)
+shape = SubResource("RectangleShape2D_plat_center")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="PlatformCenter" unique_id=709004822]
+position = Vector2(0, 10)
+scale = Vector2(0.3, 0.2)
+texture = ExtResource("3_mossy")
+region_enabled = true
+region_rect = Rect2(438, 1095, 1560, 449)
+
+[node name="PlatformRight" type="StaticBody2D" parent="." unique_id=1468467305]
+position = Vector2(1030, 480)
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformRight" unique_id=523042833]
+position = Vector2(0, -15)
+shape = SubResource("RectangleShape2D_plat_right")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="PlatformRight" unique_id=6285323]
+position = Vector2(0, 10)
+scale = Vector2(0.8, 0.2)
+texture = ExtResource("3_mossy")
+region_enabled = true
+region_rect = Rect2(113, 1095, 280, 449)
+
+[node name="SpawnP1" type="Marker2D" parent="." unique_id=890517562]
+position = Vector2(250, 580)
+
+[node name="SpawnP2" type="Marker2D" parent="." unique_id=1319869445]
+position = Vector2(1030, 580)
