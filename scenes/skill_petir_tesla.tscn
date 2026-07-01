@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://8ox4y0ehvpqd"]
+
+[ext_resource type="Script" uid="uid://dm00367ui6pgn" path="res://scripts/skill_petir_tesla.gd" id="1_eaw7h"]
+[ext_resource type="Texture2D" uid="uid://ddq0bh8pgwwfk" path="res://assets/NicolaTesla (2).png" id="2_nr71f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbck5"]
+size = Vector2(614.5, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7tud"]
+atlas = ExtResource("2_nr71f")
+region = Rect2(1056, 594, 264, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5fb2"]
+atlas = ExtResource("2_nr71f")
+region = Rect2(1056, 792, 264, 198)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rd176"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7tud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5fb2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="SkillPetirTesla" type="Area2D" unique_id=2024211625]
+script = ExtResource("1_eaw7h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=503150137]
+position = Vector2(304.75, -1)
+shape = SubResource("RectangleShape2D_hbck5")
+
+[node name="DotTimer" type="Timer" parent="." unique_id=128258503]
+wait_time = 0.2
+one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1322707006]
+position = Vector2(266, 7.000002)
+scale = Vector2(2.5719697, 0.41666666)
+sprite_frames = SubResource("SpriteFrames_rd176")
+frame_progress = 0.8413243
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="DotTimer" to="." method="_on_dot_timer_timeout"]

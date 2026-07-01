@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://w52qc5q2w68m"]
+
+[ext_resource type="Script" uid="uid://dplrxp2sp6pyw" path="res://scripts/ulti_edison.gd" id="1_r6416"]
+[ext_resource type="Texture2D" uid="uid://dyb8q0atu6cf7" path="res://assets/ThomasEdison.png" id="2_v3poo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbcma"]
+atlas = ExtResource("2_v3poo")
+region = Rect2(1360, 768, 85, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqvwx"]
+atlas = ExtResource("2_v3poo")
+region = Rect2(512, 730, 128, 146)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ytweh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbcma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqvwx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifvk4"]
+size = Vector2(384.375, 392.875)
+
+[node name="Proyektil" type="Area2D" unique_id=1479654970]
+z_index = 20
+position = Vector2(176, 88)
+collision_mask = 7
+script = ExtResource("1_r6416")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1264102004]
+position = Vector2(24.158815, -27.269512)
+scale = Vector2(4.9975185, 3.4757597)
+sprite_frames = SubResource("SpriteFrames_ytweh")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1009821121]
+position = Vector2(26.8125, 9.5625)
+shape = SubResource("RectangleShape2D_ifvk4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

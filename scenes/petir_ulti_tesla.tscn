@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://br4xwgbhxpfl0"]
+
+[ext_resource type="Script" uid="uid://cyqs5wa1e3b7g" path="res://scripts/petir_ulti_tesla.gd" id="1_aoajn"]
+[ext_resource type="Texture2D" uid="uid://b51rtj1deqwse" path="res://assets/Ulti_tesla.png" id="2_0nqyy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nqyy"]
+size = Vector2(76, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nngmv"]
+atlas = ExtResource("2_0nqyy")
+region = Rect2(0, 0, 512, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ij8hu"]
+atlas = ExtResource("2_0nqyy")
+region = Rect2(512, 0, 512, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sr2c0"]
+atlas = ExtResource("2_0nqyy")
+region = Rect2(1024, 0, 256, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ska2f"]
+atlas = ExtResource("2_0nqyy")
+region = Rect2(1344, 0, 192, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wfpy6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nngmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ij8hu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sr2c0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ska2f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}]
+
+[node name="PetirUltiTesla" type="Area2D" unique_id=1514657799]
+script = ExtResource("1_aoajn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1583063299]
+position = Vector2(-4, -96)
+shape = SubResource("RectangleShape2D_0nqyy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=558795493]
+position = Vector2(-0.99999976, -89)
+scale = Vector2(0.28470105, 0.35334644)
+sprite_frames = SubResource("SpriteFrames_wfpy6")
+frame = 1
+frame_progress = 0.63264346

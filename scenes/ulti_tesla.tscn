@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b1h7es21hd6ka"]
+
+[ext_resource type="Script" uid="uid://ciyceenmpikak" path="res://scripts/ulti_tesla.gd" id="1_igywu"]
+
+[node name="UltiTesla" type="Node2D" unique_id=252666986]
+script = ExtResource("1_igywu")

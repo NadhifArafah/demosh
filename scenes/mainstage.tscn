@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://65rgf16ndxcd" path="res://scripts/mainstage.gd" id="4_mgscr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8l82"]
-size = Vector2(1276, 224)
+size = Vector2(1276, 95)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
 size = Vector2(40, 720)
@@ -49,7 +49,7 @@ texture = ExtResource("3_eytaj")
 position = Vector2(658, 661)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=305097335]
-position = Vector2(-22, -61)
+position = Vector2(-22, 3.5)
 shape = SubResource("RectangleShape2D_n8l82")
 debug_color = Color(0, 0.6, 0.7019608, 0.41960785)
 
@@ -76,7 +76,7 @@ health_bar = NodePath("../CanvasLayer/P2Health")
 position = Vector2(640, 360)
 
 [node name="MossyFloatingPlatforms" type="Sprite2D" parent="." unique_id=1795091776]
-position = Vector2(698, 1754.0001)
+position = Vector2(674, 1652)
 scale = Vector2(1.3999022, 1.0097656)
 texture = ExtResource("3_mbkmb")
 

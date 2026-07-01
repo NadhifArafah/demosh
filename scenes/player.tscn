@@ -6,6 +6,8 @@
 radius = 44.0
 height = 146.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_3vyb7"]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_4flbx"]
 animations = []
 
@@ -13,6 +15,7 @@ animations = []
 size = Vector2(166.5, 192)
 
 [node name="Player" type="CharacterBody2D" unique_id=188033048]
+z_index = 1
 script = ExtResource("1_4flbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=997686009]
@@ -20,8 +23,7 @@ position = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_sh265")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=875988980]
-sprite_frames = SubResource("SpriteFrames_4flbx")
-animation = &""
+sprite_frames = SubResource("SpriteFrames_3vyb7")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1686305947]
 sprite_frames = SubResource("SpriteFrames_4flbx")
@@ -37,6 +39,9 @@ shape = SubResource("RectangleShape2D_4flbx")
 one_shot = true
 
 [node name="CooldownPukul" type="Timer" parent="." unique_id=102789675]
+one_shot = true
+
+[node name="CooldownSkill" type="Timer" parent="." unique_id=1722150578]
 one_shot = true
 
 [connection signal="body_entered" from="PunchBox" to="." method="_on_punch_box_body_entered"]

@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://b55opbqi28rgp"]
+
+[ext_resource type="Script" uid="uid://ci21iymhajy2o" path="res://scripts/skill_aura_edison.gd" id="1_i6p7i"]
+[ext_resource type="Texture2D" uid="uid://b42j07pb3dj6h" path="res://assets/aura edison.png" id="2_b4h50"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b4h50"]
+radius = 119.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hu1pc"]
+atlas = ExtResource("2_b4h50")
+region = Rect2(0, 341, 307, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_por5e"]
+atlas = ExtResource("2_b4h50")
+region = Rect2(307, 341, 307, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33qkp"]
+atlas = ExtResource("2_b4h50")
+region = Rect2(614, 341, 307, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wi63f"]
+atlas = ExtResource("2_b4h50")
+region = Rect2(921, 341, 307, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3n1k"]
+atlas = ExtResource("2_b4h50")
+region = Rect2(1228, 341, 307, 341)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_64qu3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hu1pc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_por5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33qkp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wi63f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3n1k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="SkillAuraEdison" type="Area2D" unique_id=287535691]
+script = ExtResource("1_i6p7i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=648452309]
+position = Vector2(-3, -1)
+shape = SubResource("CircleShape2D_b4h50")
+
+[node name="DotTimer" type="Timer" parent="." unique_id=2107914322]
+one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=571068985]
+position = Vector2(-0.99999976, 9.000001)
+scale = Vector2(0.8236971, 0.8625366)
+sprite_frames = SubResource("SpriteFrames_64qu3")
+frame_progress = 0.38717014
